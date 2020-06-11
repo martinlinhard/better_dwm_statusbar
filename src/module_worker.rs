@@ -14,7 +14,7 @@ pub struct ModuleWorker {
 
 impl ModuleWorker {
     pub fn new(wrapper: ModuleWrapper, status_server_addr: Addr<StatusServer>) -> Self {
-        let ModuleWrapper (pause, module) = wrapper;
+        let ModuleWrapper (module, pause) = wrapper;
         Self {
             pause,
             module,
