@@ -9,3 +9,6 @@ edition = "2018"
 [dependencies]
 actix = "0.9"
 x11 = { version = "2", features = ["xlib"]}
+chrono = "0.4"
+lazy_static = "1.4"
+systemstat = "0.1"
