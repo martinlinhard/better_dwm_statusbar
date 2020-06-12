@@ -1,5 +1,5 @@
 /// The core trait of the modular system
-pub trait Module: Send + Sync {
+pub trait Module {
     fn yield_next_value(&mut self) -> String;
 }
 

@@ -11,7 +11,7 @@ impl Actor for ClockServer {
 }
 
 impl ClockServer {
-    fn new(workers: Addr<ModuleWorker>) -> Self {
+    pub fn new(workers: Addr<ModuleWorker>) -> Self {
         Self { workers }
     }
 }
