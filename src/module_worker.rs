@@ -22,7 +22,7 @@ impl ModuleWorker {
 }
 
 impl Actor for ModuleWorker {
-    type Context = SyncContext<Self>;
+    type Context = Context<Self>;
 }
 
 impl ModuleWorker {
@@ -33,7 +33,7 @@ impl ModuleWorker {
 
 impl Handler<ClockMessage> for ModuleWorker {
     type Result = ();
-    fn handle(&mut self, msg: ClockMessage, _ctx: &mut SyncContext<Self>) -> Self::Result {
+    fn handle(&mut self, msg: ClockMessage, _ctx: &mut Context<Self>) -> Self::Result {
         // Get the module which the clock specified
         let module = self.modules.get_mut(&msg.0).unwrap();
         // Get its content

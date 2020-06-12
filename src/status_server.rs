@@ -31,7 +31,7 @@ impl StatusServer {
     pub fn new(amount_modules: usize, delimiter: &'static str) -> Self {
         Self {
             root_window: RootWindow::init_window(),
-            segments: Vec::with_capacity(amount_modules),
+            segments: vec![String::new(); amount_modules],
             delimiter,
         }
     }

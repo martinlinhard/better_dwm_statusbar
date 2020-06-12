@@ -38,7 +38,7 @@ impl Module for Battery {
 }
 
 impl Battery {
-    pub fn init_with_animation(animation: AnimationType, format: &'static str) -> Self {
+    pub fn new(animation: AnimationType, format: &'static str) -> Self {
         Self {
             animation,
             animation_index: 0,

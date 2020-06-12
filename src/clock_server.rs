@@ -24,7 +24,7 @@ impl Handler<AddIntervalMessage> for ClockServer {
         let addr = self.workers.clone();
 
         ctx.run_interval(pause, move |_, _| {
-            addr.do_send(ClockMessage(index.clone()));
+            addr.do_send(ClockMessage(index));
         });
     }
 }
