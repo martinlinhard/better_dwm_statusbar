@@ -1,4 +1,4 @@
-use crate::module::ModuleMessage;
+use crate::messages::ModuleMessage;
 use crate::x11_utils::RootWindow;
 use actix::prelude::*;
 
