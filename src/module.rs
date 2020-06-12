@@ -1,6 +1,6 @@
 use actix::prelude::*;
 /// The core trait of the modular system
-pub trait Module {
+pub trait Module: Send + Sync {
     fn yield_next_value(&mut self) -> String;
 }
 
