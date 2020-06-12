@@ -23,22 +23,6 @@ impl Module for CustomScript {
 }
 
 pub fn execute_in_bash(value: &str) -> Result<String, Box<dyn Error>> {
-    let process = Command::new("bash")
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .spawn()?;
-
-    process
-        .stdin
-        .ok_or(std::io::Error::new(std::io::ErrorKind::Other, "Fail"))?
-        .write_all(value.as_bytes())?;
-
-    let mut s = String::new();
-
-    process
-        .stdout
-        .ok_or(std::io::Error::new(std::io::ErrorKind::Other, "Fail"))?
-        .read_to_string(&mut s)?;
-
-    Ok(s)
+    let output = Command::new("bash").arg(value).output()?;
+    Ok(String::from_utf8(output.stdout)?)
 }
